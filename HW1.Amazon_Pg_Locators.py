@@ -12,7 +12,6 @@ service = Service(driver_path)
 driver = webdriver.Chrome()
 driver.maximize_window()
 
-
 driver.get("https://www.amazon.com/")
 
 #Amazon Logo locators
