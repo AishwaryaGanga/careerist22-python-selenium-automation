@@ -14,9 +14,11 @@ driver.maximize_window()
 
 #open the url
 driver.get("https://www.google.com/")
-sleep(4)
+sleep(10)
 
-#driver.find_element(By.XPATH, "//button[@aria-label='Stay signed out']").click()
+#button_Sign_out = driver.find_element(By.XPATH, "//button[@aria-label='Stay signed out']")
+#button_Sign_out.click()
+#sleep(10)
 
 search = driver.find_element(By.NAME,"q")
 search.clear()
