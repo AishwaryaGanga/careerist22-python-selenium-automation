@@ -21,7 +21,7 @@ def input_search(context):
     cart = context.driver.find_element(*CART_BUTTON).click()
     sleep(3)
 
-@then('Verify "You cart is empty"')
+@then('Verify "Your cart is empty"')
 def verify_empty(context):
     page_text_element = context.driver.find_element(*PAGE_TEXT)
     assert "Your cart is empty" in page_text_element.text, \

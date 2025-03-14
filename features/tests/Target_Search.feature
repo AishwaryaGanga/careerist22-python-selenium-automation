@@ -4,4 +4,4 @@ Feature: Test Scenarios for Search functionality
   Scenario: User verify the Cart button
     Given Open target.com
     When Click on the Cart icon
-    Then Verify "You cart is empty"
+    Then Verify "Your cart is empty"
