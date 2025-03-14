@@ -26,4 +26,3 @@ def verify_empty(context):
     page_text_element = context.driver.find_element(*PAGE_TEXT)
     assert "Your cart is empty" in page_text_element.text, \
         f'Expected text "Your cart is empty" not found in {page_text_element.text}'
-    print('Verified "Your cart is empty"')
