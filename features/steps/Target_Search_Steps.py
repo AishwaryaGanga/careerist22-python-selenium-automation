@@ -3,9 +3,6 @@ from behave import given, when, then
 from time import sleep
 
 
-
-#from sample_script import driver
-
 CART_BUTTON = (By.CSS_SELECTOR,"[data-test = '@web/CartLink']")
 PAGE_TEXT =  (By.CSS_SELECTOR, ".styles_fontSize1__i0fbt")
 
