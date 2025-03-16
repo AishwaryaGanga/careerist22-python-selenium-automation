@@ -9,7 +9,7 @@ PAGE_TEXT =  (By.CSS_SELECTOR, ".styles_fontSize1__i0fbt")
 #practice purpose (By.XPATH, "//a[@data-test = '@web/CartLink']")
 
 @given('Open target.com')
-def open_google(context):
+def open_target(context):
     context.driver.get('https://www.target.com/')
 
 
