@@ -4,5 +4,5 @@ Feature: Search for product and loop through to test the name and image of the p
 
   Scenario: User loops through searched product.
     Given Open target main page
-    When Search for orange juice
+    When Search for iphone
     Then Verify products has a product name and image
