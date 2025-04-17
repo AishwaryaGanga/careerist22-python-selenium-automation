@@ -4,10 +4,8 @@ from time import sleep
 from app import application
 from selenium.webdriver.support import expected_conditions as EC
 
-
 SEARCH_FIELD = (By.ID, 'search')
-SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
-CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
+
 HEADER_LINKS = (By.CSS_SELECTOR, "[id*='utilityNav']")
 ADD_CART = (By.XPATH, "[data-test ='shippingButton']")
 
@@ -22,9 +20,10 @@ def search_product(context, search_word):
     context.app.header.search(search_word)
 
 
-#@when('Click on Cart icon')
-#def click_cart(context):
+@when('Click on Cart icon')
+def click_cart(context):
     #context.driver.find_element(*CART_ICON).click()
+    context.app.header.click_cart()
 
 
 @then('Verify at least 1 link shown')

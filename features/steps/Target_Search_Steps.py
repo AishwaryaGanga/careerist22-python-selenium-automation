@@ -19,10 +19,10 @@ def open_target(context):
 
 @when('Click on the Cart icon')
 def input_search(context):
-    context.driver.until(EC.element_to_be_clickable(CART_BUTTON)).click()
+    context.driver.wait.until(EC.element_to_be_clickable(CART_BUTTON)).click()
 
 @when('Add the product to the cart')
 def add_to_cart(context):
-    context.driver.until(EC.element_to_be_clickable(CLICK_CHOCOLATE)).click()
-    context.driver.until(EC.element_to_be_clickable(ADD_TO_CART)).click()
-    context.driver.until(EC.element_to_be_clickable(VIEW_CART)).click()
+    context.driver.wait.until(EC.element_to_be_clickable(CLICK_CHOCOLATE)).click()
+    context.driver.wait.until(EC.element_to_be_clickable(ADD_TO_CART)).click()
+    context.driver.wait.until(EC.element_to_be_clickable(VIEW_CART)).click()
