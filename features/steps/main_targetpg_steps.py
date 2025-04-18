@@ -12,8 +12,6 @@ ADD_CART = (By.XPATH, "[data-test ='shippingButton']")
 @given('Open target main page')
 def open_target_main(context):
     context.app.main_page.open_main_page()
-    context.driver.wait.until(EC.presence_of_element_located(SEARCH_FIELD))
-
 
 @when('Search for {search_word}')
 def search_product(context, search_word):
@@ -25,6 +23,13 @@ def click_cart(context):
     #context.driver.find_element(*CART_ICON).click()
     context.app.header.click_cart()
 
+@when('Click on Sign In button')
+def click_sign_in(context):
+    context.app.header.click_sign_in()
+
+@when('Click Sign In from navigation menu')
+def click_sign_in(context):
+    context.app.header.click_nav_sign_in()
 
 @then('Verify at least 1 link shown')
 def verify_1_header_link_shown(context):
