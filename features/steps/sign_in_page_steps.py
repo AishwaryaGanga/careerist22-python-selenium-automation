@@ -7,5 +7,5 @@ def verify_sign_in_page_opens(context):
 
 @then('Verify user can login')
 def verify_user_logins(context):
-   context.app.header.input_email()
-   context.app.header.input_password()
+   context.app.sign_in_page.input_email()
+   context.app.sign_in_page.input_password()

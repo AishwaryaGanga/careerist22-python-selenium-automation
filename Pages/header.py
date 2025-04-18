@@ -7,10 +7,7 @@ class Header(Page):
     CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
     SIGN_IN = (By.CSS_SELECTOR, ".sc-43f80224-3")
     NAV_SIGN_IN = (By.CSS_SELECTOR, "[data-test = 'accountNav-signIn']")
-    EMAIL = (By.ID, 'username')
-    CONTINUE = (By.ID, 'continue')
-    PASSWORD = (By.ID, 'password')
-    LOGIN = (By.ID, 'login')
+
 
 
 
@@ -28,12 +25,6 @@ class Header(Page):
     def click_nav_sign_in(self):
         self.click(*self.NAV_SIGN_IN)
 
-    def input_email(self):
-        self.input_text(self.EMAIL, 'stefano@gfacc.net')
-        self.click(self.CONTINUE)
 
-    def input_password(self):
-        self.input_text(self.PASSWORD, 'Asdfghjkl')
-        self.click(self.LOGIN)
 
 
