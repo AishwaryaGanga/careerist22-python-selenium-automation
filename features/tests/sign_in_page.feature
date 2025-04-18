@@ -6,3 +6,9 @@ Feature: Verify sign in page
     When Click on Sign In button
     And Click Sign In from navigation menu
     Then Verify Sign in form opened
+
+  Scenario: Create login page
+    Given Open target main page
+    When Click on Sign In button
+    And Click Sign In from navigation menu
+    Then Verify user can login
