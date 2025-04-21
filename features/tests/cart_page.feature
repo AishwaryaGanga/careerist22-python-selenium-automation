@@ -10,6 +10,6 @@ Feature: Cart tests
 
   Scenario: 'Selected target product added to cart' shown in cart page
     Given Open target main page
-    When Search for white  chocolate
+    When Search for Love You Mom Mug Blue
     And Add the product to the cart
     Then Verify cart has the product
