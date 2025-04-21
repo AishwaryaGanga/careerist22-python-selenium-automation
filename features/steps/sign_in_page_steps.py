@@ -2,8 +2,10 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 
 @given("Open target sign in page")
-def open_target_sign_in_page(context):
-    context.app.sign_in_page.open_target_sign_in_page()
+def click_login_page(context):
+    context.app.sign_in_page.click_login_page()
+    context.app.sign_in_page.input_email()
+
 
 @given("Store original window")
 def store_original_window(context):
