@@ -15,6 +15,11 @@ def store_original_window(context):
 def click_terms_and_conditions(context):
     context.app.sign_in_page.click_terms_and_conditions()
 
+@when("Switch to the newly opened window")
+def switch_to_newly_opened_window(context):
+    context.app.sign_in_page.switch_to_newly_opened_window()
+
+
 
 @then('Verify Sign in form opened')
 def verify_sign_in_page_opens(context):
@@ -24,3 +29,4 @@ def verify_sign_in_page_opens(context):
 def verify_user_logins(context):
    context.app.sign_in_page.input_email()
    context.app.sign_in_page.input_password()
+

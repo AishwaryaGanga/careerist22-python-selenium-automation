@@ -7,8 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class SignInPage(Page):
     #SIGN_IN_TEXT = (By.CSS_SELECTOR, ".styles_ndsHeading__HcGpD")
-    EMAIL = (By.ID, '#username')
-    CONTINUE = (By.ID, 'continue')
+    EMAIL = (By.ID, 'username')
+    #CONTINUE = (By.ID, 'continue')
     PASSWORD = (By.ID, 'password')
     LOGIN = (By.ID, 'login')
     PRIVACY_POLICY = (By.CSS_SELECTOR,"[aria-label *= 'terms & conditions']" )
@@ -21,26 +21,41 @@ class SignInPage(Page):
         sleep(5)
 
     def store_original_window(self):
-        self.current_window_handle = self.driver.current_window_handle
-        print("Current window handle: ",self.current_window_handle)
+        self.original_window = self.driver.current_window_handle
+        print("Current window handle: ",self.original_window)
 
     def click_terms_and_conditions(self):
         self.click(*self.PRIVACY_POLICY)
+
+    def switch_to_newly_opened_window(self):
+        sleep(2)
+        all_windows = self.driver.window_handles
+        print("Current window handle: ",all_windows)
+        self.driver.switch_to.window(all_windows[1])
+        print("Current window handle: ",self.driver.current_window_handle)
 
     def verify_sign_in_page_opens(self):
         self.verify_partial_url('https://www.target.com/login?')
 
     def input_email(self):
-        self.input_text(self.EMAIL, 'stefano@gfacc.net')
-        self.click(self.CONTINUE)
+        #self.input_text( *self.EMAIL, 'stefano@gfacc.net',)
+        #self.input_text(*self.EMAIL).send_keys('stefano@gfacc.net')
+        self.input_text('stefano@gfacc.net', *self.EMAIL)
+        self.click(*self.LOGIN)
+
 
     def input_password(self):
-        self.input_text(self.PASSWORD, 'Asdfghjkl')
-        self.click(self.LOGIN)
+        #self.input_text(self.PASSWORD, 'Asdfghjkl')
+        self.input_text('Asdfghjkl', *self.PASSWORD)
+        self.click(*self.LOGIN)
+
 
     def click_login_page(self):
+        sleep(5)
         self.wait.until(EC.element_to_be_clickable(self.SIGN_IN)).click()
         self.wait.until(EC.element_to_be_clickable(self.SIGN_IN_BUTTON)).click()
+
+
 
 
 
