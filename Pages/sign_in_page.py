@@ -11,7 +11,7 @@ class SignInPage(Page):
     #CONTINUE = (By.ID, 'continue')
     PASSWORD = (By.ID, 'password')
     LOGIN = (By.ID, 'login')
-    PRIVACY_POLICY = (By.CSS_SELECTOR,"[aria-label *= 'terms & conditions']" )
+    TERMS_CONDITIONS = (By.CSS_SELECTOR, "[aria-label = 'terms & conditions - opens in a new window']")
     SIGN_IN = (By.CSS_SELECTOR, ".sc-43f80224-3.fBDEOp.h-margin-r-x3")
     SIGN_IN_BUTTON = (By.CSS_SELECTOR, "[data-test = 'accountNav-signIn']")
 
@@ -22,7 +22,8 @@ class SignInPage(Page):
 
 
     def click_terms_and_conditions(self):
-        self.click(*self.PRIVACY_POLICY)
+        self.click(*self.TERMS_CONDITIONS)
+
 
     def verify_sign_in_page_opens(self):
         self.verify_partial_url('https://www.target.com/login?')
