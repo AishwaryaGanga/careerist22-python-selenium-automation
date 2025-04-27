@@ -20,19 +20,9 @@ class SignInPage(Page):
         self.open_url("https://mytargetcirclecard.target.com/ecs/auth/?cid=AAAA6331001")
         sleep(5)
 
-    def store_original_window(self):
-        self.original_window = self.driver.current_window_handle
-        print("Current window handle: ",self.original_window)
 
     def click_terms_and_conditions(self):
         self.click(*self.PRIVACY_POLICY)
-
-    def switch_to_newly_opened_window(self):
-        sleep(2)
-        all_windows = self.driver.window_handles
-        print("Current window handle: ",all_windows)
-        self.driver.switch_to.window(all_windows[1])
-        print("Current window handle: ",self.driver.current_window_handle)
 
     def verify_sign_in_page_opens(self):
         self.verify_partial_url('https://www.target.com/login?')

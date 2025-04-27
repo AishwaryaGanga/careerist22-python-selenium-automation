@@ -9,7 +9,8 @@ def click_login_page(context):
 
 @given("Store original window")
 def store_original_window(context):
-    context.app.sign_in_page.store_original_window()
+    context.orginal_window = context.app.base_page.get_current_window_handle()
+    print("Orginal window", context.orginal_window)
 
 @when("Click on Target terms and conditions link")
 def click_terms_and_conditions(context):
@@ -17,7 +18,9 @@ def click_terms_and_conditions(context):
 
 @when("Switch to the newly opened window")
 def switch_to_newly_opened_window(context):
-    context.app.sign_in_page.switch_to_newly_opened_window()
+    context.app.base_page.switch_to_new_window()
+
+
 
 
 
