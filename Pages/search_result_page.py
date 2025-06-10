@@ -18,7 +18,7 @@ class SearchResultPage(Page):
             self.verify_partial_url(expected_partial_url)
 
     def click_the_cart(self):
-        self.wait.until(EC.element_to_be_clickable(*self.CART_BUTTON)).click()
+        self.wait.until(EC.element_to_be_clickable(self.CART_BUTTON)).click()
 
     def add_to_cart(self):
         self.wait.until(EC.element_to_be_clickable(self.CLICK_MUG)).click()
